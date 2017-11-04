@@ -7,7 +7,7 @@ bot = discord.Client(max_messages=101)
 @bot.event
 async def on_ready():
     print("Logged in as", bot.user.name, "#", bot.user.discriminator)
-    await bot.change_presence(game=discord.Game(name="discordmeme.github.io", type=0))
+    await bot.change_presence(game=discord.Game(name="discordme.me", type=0))
     if not discord.opus.is_loaded():
         discord.opus.load_opus("libopus.so")
 
