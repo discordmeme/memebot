@@ -37,7 +37,9 @@ async def on_message(message):
                 if message.channel.permissions_for(message.server.me).send_messages:
                     await bot.send_message(message.channel, "I need the `connect` and `speak` permissions to work!")
     elif message.content.lower() == "!invite" and (message.channel.is_private or message.channel.permissions_for(message.server.me).send_messages):
-            await bot.send_message(message.channel, "<http://discordme.me/invite>")
+        await bot.send_message(message.channel, "<http://discordme.me/invite>")
+    elif message.content.lower() == "!help" and (message.channel.is_private or message.channel.permissions_for(message.server.me).send_messages):
+        await bot.send_message(message.channel, "`!nicememe` - `plays 'nice meme' in your voice channel`\n`!invite` - `obtain the bot invite link`")
     elif message.content.lower().startswith("!eval") and message.author.id == "146726280245673984":
         try:
             await bot.send_message(message.channel, content="```py\n" + str(eval(message.content[6:])) + "```")
